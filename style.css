@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffe6eb;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  text-align: center;
+  color: #e91e63;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  margin-top: 60px;
+  color: #ff4081;
+  text-shadow: 2px 2px 15px #ff80ab;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.message-box {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 40px auto;
+  padding: 25px;
+  max-width: 800px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  box-shadow: 0 0 25px rgba(233, 30, 99, 0.3);
+}
+
+.shayari {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #880e4f;
+}
+
+.button {
+  margin-top: 40px;
+  padding: 15px 35px;
+  background-color: #ff80ab;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: #f50057;
+}
+
+.heart {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  position: fixed;
+  top: -20px;
+  left: 0;
+  transform: rotate(45deg);
+  animation: fall 6s linear infinite;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -12px;
+  left: 0;
+}
+
+.heart::after {
+  left: -12px;
+  top: 0;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff80ab, 0 0 20px #ff4081;
+  }
+  to {
+    text-shadow: 0 0 20px #f50057, 0 0 30px #ec407a;
+  }
+}

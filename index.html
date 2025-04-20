@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry Amjad - Love Bomb</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(#ff9a9e, #fad0c4);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      margin-top: 50px;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .message {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .shayari {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.1rem;
+      background: rgba(255,255,255,0.15);
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: white;
+      color: #e91e63;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #fff0f5;
+    }
+
+    .heart {
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      position: fixed;
+      top: -20px;
+      left: 0;
+      transform: rotate(45deg);
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -12px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -12px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff6ec4, 0 0 30px #ff6ec4;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #f9f, 0 0 40px #f9f;
+      }
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="glow">I'm Really Sorry, Amjad</h1>
+
+  <div class="message">
+    Bhai, zindagi mein kuch pal aise hote hain jo sirf feel kiye jaate hain...<br>
+    Tu naraz hai, par tu mere dil ka asli yaar hai.<br>
+    Teri hansi, tera gussa — sab kuch chahiye mujhe.<br><br>
+    <strong>Main sach mein sorry hoon… dil se!</strong>
+
+    <div class="shayari">
+      "Narazgi teri kal se rulaye jaa rahi hai,<br>
+      Dosti meri teri yaadon mein kho jaa rahi hai.<br>
+      Galti meri thi, is dil ne maan liya,<br>
+      Ab tu bhi muskura, yeh dosti phir se saj jaaye."
+    </div>
+
+    <button class="btn" onclick="alert('Bhai please maaf kar de!')">Maafi De De</button>
+  </div>
+
+  <div class="footer">
+    Designed with Dil Se
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 4 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 150);
+  </script>
+</body>
+</html>
